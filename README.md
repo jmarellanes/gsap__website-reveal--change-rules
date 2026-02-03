@@ -238,7 +238,11 @@ Modify animation timing and easing in src/scripts/main.js:
 
 ## License
 
-[Add your license information here - e.g., MIT, Apache 2.0]
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 José Manuel Díaz
 
 ## Contributing
 
