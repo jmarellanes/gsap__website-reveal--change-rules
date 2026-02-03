@@ -10,15 +10,31 @@
     <meta name="description" content="Site Description Here" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet" />
+    <link rel="preload" href="src/assets/fonts/Dirtyline.woff2" as="font" type="font/woff2" crossorigin />
 
     <link rel="stylesheet" href="src/styles/style.css" />
     <script defer src="src/scripts/main.js" type="module"></script>
   </head>
 
   <body>
-    <p>MY Website</p>
+    <div class="navbar">
+      <div class="site-info">Agency</div>
+
+      <div class="site-menu">
+        <div class="menu-item">projects</div>
+        <div class="menu-item">about</div>
+        <div class="menu-item">contact</div>
+      </div>
+    </div>
+
+    <main class="site-main">
+      <section class="hero">
+        <div class="title">Change the Rules</div>
+
+        <div class="container"></div>
+
+        <div class="overlay"></div>
+      </section>
+    </main>
   </body>
 </html>

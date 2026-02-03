@@ -1,4 +1,19 @@
+@import "./fonts.css";
+
 @layer reset {
+  :root {
+    --color-bg: #e3dcc7;
+    --color-text-main: #6d6458;
+    --color-text-title: #393833;
+
+    --font-primary: Helvetica, sans-serif;
+    --font-display: "Dirtyline", sans-serif;
+
+    --nav-height: 100px;
+    --container-width: 400px;
+    --container-height: 300px;
+  }
+
   *,
   *::before,
   *::after {
@@ -33,7 +48,6 @@
   }
 
   body {
-    min-block-size: 100vh;
     line-height: 1.6;
   }
 
@@ -70,4 +84,113 @@
   select {
     font: inherit;
   }
+}
+
+body {
+  background-color: var(--color-bg);
+  block-size: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.navbar {
+  align-items: center;
+  block-size: var(--nav-height);
+  color: var(--color-text-main);
+  display: flex;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  justify-content: space-between;
+  padding-inline: 40px;
+  text-transform: uppercase;
+}
+
+.site-menu {
+  display: flex;
+  gap: 60px;
+}
+
+.site-main {
+  align-items: flex-end;
+  display: flex;
+  height: calc(100vh - var(--nav-height));
+  justify-content: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(3, max-content);
+  height: 80%;
+  place-items: center;
+}
+
+.title,
+.container,
+.overlay {
+  grid-column: 1 / -1;
+  width: 100vw;
+}
+
+.title {
+  grid-row: 2 / 3;
+}
+
+.container {
+  grid-row: 2 / 3;
+}
+
+.overlay {
+  grid-row: 3 / 4;
+}
+
+.container {
+  block-size: var(--container-height);
+  inline-size: var(--container-width);
+  overflow: hidden;
+  position: relative;
+}
+
+.block {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  block-size: 100%;
+  inline-size: 100%;
+  inset: 0;
+  position: absolute;
+}
+
+.overlay {
+  background: var(--color-bg);
+  block-size: 100vh;
+  inline-size: 100%;
+  z-index: 10;
+}
+
+.title {
+  align-items: center;
+  color: var(--color-text-title);
+  column-gap: 0.2em;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 10vw, 8rem);
+  justify-content: center;
+  line-height: 1;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  z-index: 20;
+}
+
+.word-group {
+  overflow: hidden;
+}
+
+.title .letter {
+  display: inline-block;
+  line-height: inherit;
+  will-change: transform;
 }
