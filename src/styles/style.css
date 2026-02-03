@@ -88,9 +88,7 @@
 
 body {
   background-color: var(--color-bg);
-  block-size: 100vh;
   margin: 0;
-  overflow: hidden;
 }
 
 .navbar {
@@ -105,50 +103,67 @@ body {
   text-transform: uppercase;
 }
 
-.site-menu {
-  display: flex;
-  gap: 60px;
-}
-
-.site-main {
-  align-items: flex-end;
-  display: flex;
-  height: calc(100vh - var(--nav-height));
-  justify-content: center;
+.word-group {
+  overflow: hidden;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
-  grid-template-rows: repeat(3, max-content);
-  height: 80%;
+  grid-template-areas: "stack";
+  height: 100dvh;
+  margin-top: calc(-1 * var(--nav-height));
+  max-height: 780px;
+  overflow: hidden;
   place-items: center;
-}
-
-.title,
-.container,
-.overlay {
-  grid-column: 1 / -1;
   width: 100vw;
 }
 
 .title {
-  grid-row: 2 / 3;
-}
-
-.container {
-  grid-row: 2 / 3;
-}
-
-.overlay {
-  grid-row: 3 / 4;
-}
-
-.container {
-  block-size: var(--container-height);
-  inline-size: var(--container-width);
+  align-items: center;
+  color: var(--color-text-title);
+  column-gap: 0.2em;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  grid-area: stack;
+  height: max-content;
+  justify-content: center;
+  line-height: 1;
+  margin-top: -180px;
   overflow: hidden;
   position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 20;
+}
+
+.title .letter {
+  display: inline-block;
+  line-height: inherit;
+  will-change: transform;
+}
+
+.images {
+  block-size: var(--container-height);
+  grid-area: stack;
+  inline-size: var(--container-width);
+  place-self: center;
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    background-color: var(--color-bg);
+    bottom: 0;
+    content: "";
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    width: 100%;
+    z-index: 15;
+  }
 }
 
 .block {
@@ -159,38 +174,4 @@ body {
   inline-size: 100%;
   inset: 0;
   position: absolute;
-}
-
-.overlay {
-  background: var(--color-bg);
-  block-size: 100vh;
-  inline-size: 100%;
-  z-index: 10;
-}
-
-.title {
-  align-items: center;
-  color: var(--color-text-title);
-  column-gap: 0.2em;
-  display: flex;
-  flex-wrap: wrap;
-  font-family: var(--font-display);
-  font-size: clamp(5rem, 10vw, 8rem);
-  justify-content: center;
-  line-height: 1;
-  line-height: 1;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  z-index: 20;
-}
-
-.word-group {
-  overflow: hidden;
-}
-
-.title .letter {
-  display: inline-block;
-  line-height: inherit;
-  will-change: transform;
 }

@@ -1,19 +1,19 @@
 import gsap from "gsap";
 
-const container = document.querySelector(".container");
+const images = document.querySelector(".images");
 const totalImages = 7;
 
-if (container) {
-  container.innerHTML = "";
+if (images) {
+  images.innerHTML = "";
 
   for (let i = 1; i <= totalImages; i++) {
-    const imgUrl = new URL(`../assets/images/image-${i}.jpg`, import.meta.url).href;
+    const imgUrl = new URL(`../assets/images/image-${i}.webp`, import.meta.url).href;
     const block = document.createElement("div");
 
     block.classList.add("block");
     block.style.backgroundImage = `url(${imgUrl})`;
     block.style.zIndex = i;
-    container.appendChild(block);
+    images.appendChild(block);
   }
 }
 
@@ -38,24 +38,19 @@ const tl = gsap.timeline({
   defaults: { ease: "expo.inOut" },
 });
 
-tl.from(".container > .block", {
+tl.from(".images > .block", {
   duration: 2,
   y: "100%",
   stagger: 0.4,
-})
+}, 0.3)
 
   .add("overlayStart")
 
-  .to(".overlay", {
-    duration: 0.5,
-    y: "100%",
-  }, "overlayStart")
-
-  .to(".container", {
+  .to(".images", {
     duration: 2,
     scale: 2,
-    y: "130%",
-  }, "overlayStart+=0.1")
+    y: "100%",
+  }, "overlayStart")
 
   .add("contentReveal", "-=1.3")
 
@@ -66,7 +61,7 @@ tl.from(".container > .block", {
     stagger: 0.08,
   }, "contentReveal")
 
-  .from(".site-menu > div", {
+  .from(".menu-item", {
     duration: 1,
     opacity: 0,
     y: -100,
@@ -76,7 +71,7 @@ tl.from(".container > .block", {
 
   .from(".title .letter", {
     duration: 1.4,
-    y: "100%",
+    y: "-100%",
     ease: "expo.out",
     stagger: 0.04,
   }, "contentReveal+=0.5");
