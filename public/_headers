@@ -1,2 +1,2 @@
 /fonts/*
-  Access-Control-Allow-Origin: https://gsap-agency-hero-reveal.netlify.app
+  Access-Control-Allow-Origin: *
