@@ -81,7 +81,7 @@ This project showcases a modern agency website with advanced animations powered 
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/jmarellanes/gsap__website-reveal--change-rules.git
 cd gsap__website-reveal--01
 ```
 
